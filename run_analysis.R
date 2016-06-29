@@ -33,27 +33,26 @@ run_analysis <- function() {
                          stringsAsFactors=FALSE)
     cnames <- make.names(cnames$V2, unique=TRUE)
     
-    ###### TODO!!!!! Remove the limits!!!
     # Load the training data. The training data is in 3 files:
     ##  X_train.txt = data in a fixed width format with 561 columns.
     ##  y_train.txt = the activity label
     ##  subject_train.txt = the subject id who performed the activity.
     # Convert the activity to a descriptive value and create a combined
     # recordset.
-    training <- read.fwf("UCI HAR Dataset/train/X_train.txt", rep(16, 561), n=700)
+    training <- read.fwf("UCI HAR Dataset/train/X_train.txt", rep(16, 561))
     names(training) <- cnames
-    activity <- read.table("UCI HAR Dataset/train/y_train.txt", nrows=700)
+    activity <- read.table("UCI HAR Dataset/train/y_train.txt")
     names(activity) <- c("id")
-    subject <- read.table("UCI HAR Dataset/train/subject_train.txt", nrows=700)
+    subject <- read.table("UCI HAR Dataset/train/subject_train.txt")
     names(subject) <- c("subject")
     activity <- activity %>% left_join(activity_map) %>% select(activity)
     training <- cbind(subject, activity, training)
     
-    test <- read.fwf("UCI HAR Dataset/test/X_test.txt", rep(16, 561), n=300)
+    test <- read.fwf("UCI HAR Dataset/test/X_test.txt", rep(16, 561))
     names(test) <- cnames
-    activity <- read.table("UCI HAR Dataset/test/y_test.txt", nrows=300)
+    activity <- read.table("UCI HAR Dataset/test/y_test.txt")
     names(activity) <- c("id")
-    subject <- read.table("UCI HAR Dataset/test/subject_test.txt", nrows=300)
+    subject <- read.table("UCI HAR Dataset/test/subject_test.txt")
     names(subject) <- c("subject")
     activity <- activity %>% left_join(activity_map) %>% select(activity)
     test <- cbind(subject, activity, test)
