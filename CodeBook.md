@@ -1,5 +1,5 @@
 # Code Book for Getting and Cleaning Data Course Project
-Add data gathered June 28, 2016.
+Data gathered June 28, 2016.
 
 ## Links
 
