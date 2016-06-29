@@ -95,7 +95,7 @@ run_analysis <- function() {
     names(data) <- new
     
     # Write the data to a file.
-    write.csv(data, file="activitydata.csv", row.names=FALSE)
+    write.table(data, file="activitydata.txt", row.names=FALSE)
     
     data
 }
@@ -110,7 +110,7 @@ summarize.activity <- function(data) {
         summarize_each(c("mean"))
 
     # Write the data to a file.
-    write.csv(sum_data, file="summarydata.csv", row.names=FALSE)
+    write.table(sum_data, file="summarydata.txt", row.names=FALSE)
     
     sum_data
 }

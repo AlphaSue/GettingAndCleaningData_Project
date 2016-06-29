@@ -11,8 +11,8 @@ This project consists of several files:
   transformations that were used to create the output datasets, and
   the source data.
 - 'run_analysis.R' - An R script which performs the transformations.
-- 'activitydata.csv' - A derived data file described in the CodeBook.
-- 'summarydata.csv' - A derived data file described in the CodeBook.
+- 'activitydata.txt' - A derived data file described in the CodeBook.
+- 'summarydata.txt' - A derived data file described in the CodeBook.
 
 ## To re-generate the derived data files:
 

@@ -23,7 +23,14 @@ This project makes the following data transformations:
 - Renames variables to eliminate abbreviations.
 - Creates a summary dataset which contains the average value for
   each variable for each subject and activity combination.
-- Stores each dataset in a delimited (CSV) format.
+- Stores each dataset in a delimited format.
+
+The resulting dataset containing the filtered data is stored in 
+`activitydata.txt` while the summary dataset is stored in 
+`summarydata.txt`. The data in `activitydata.txt` are the observations
+of the following variables from the source data. The data
+in `summarydata.txt` are the average of the corresponding variable
+from `activitydata.txt`.
   
 ## Variable descriptions
 
